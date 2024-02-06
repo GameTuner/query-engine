@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": [
+        "--gcp-project-id",
+        "<gcp-project-id>"
+      ],
+      "cwd": "${fileDirname}"
+    },
+    {
+      "name": "Python: Run tests",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["tests"],
+      "justMyCode" : false
+    },
+    {
+      "name": "Python: Start Service",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "queryengine.main:app",
+        "--reload",
+        "--host",
+        "127.0.0.2"
+      ]
+    }
+  ]
+}
